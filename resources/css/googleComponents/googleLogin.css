@@ -1,0 +1,120 @@
+/* Contenedor principal */
+.google-login-container {
+  position: relative;
+  min-height: 75vh;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Tarjeta */
+.google-login-card {
+  position: relative;
+  z-index: 2;
+  background: #f9f9f9;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Título y descripción */
+.google-login-card h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.google-login-card p {
+  color: #4b5563;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Botón de Google */
+#g_id_signin {
+  margin: 0 auto;
+}
+
+/* Mensaje de estado inline */
+.google-login-status.success {
+  color: #22c55e;
+  font-weight: bold;
+  text-align: center;
+}
+
+.google-login-status.error {
+  color: #ef4444;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Toast de éxito */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1rem 1.5rem;
+  background-color: #4ade80;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  transition: opacity 0.4s, transform 0.4s;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast .icon {
+  font-size: 1.3rem;
+}
+
+.google-user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.google-user-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.google-user-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .google-login-card {
+    padding: 2rem;
+  }
+
+  #g_id_signin {
+    width: 100% !important;
+  }
+}

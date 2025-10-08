@@ -1,0 +1,125 @@
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem;
+  padding: 1rem;
+  margin-top: 40px;
+  margin-bottom: 100px;
+  overflow: visible;
+}
+
+.skill-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-logo {
+  width: 35px;
+  height: 35px;
+}
+
+/* Barra de progreso */
+.progress-bar {
+  background: #e5e7eb;
+  border-radius: 8px;
+  height: 15px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #4f46e5, #3b82f6);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8px;
+  border-radius: 8px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: width 1.2s ease;
+}
+
+.progress-text {
+  position: relative;
+  z-index: 1;
+}
+
+/* Descripción oculta */
+.skill-description {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #555;
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  overflow: hidden;
+}
+
+/* --- Pantallas grandes --- */
+@media (min-width: 769px) {
+  /* Todas las tarjetas de la fila activa crecen */
+  .skill-card.active {
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+  }
+
+  /* Solo mostramos las descripciones de la fila activa */
+  .skill-card.active .skill-description {
+    opacity: 1;
+    max-height: 200px;
+  }
+}
+
+
+/* --- Pantallas pequeñas --- */
+@media (max-width: 768px) {
+  .skill-card.active .skill-description {
+    opacity: 1;
+    max-height: 200px;
+  }
+
+  /* Quitamos efecto hover en móviles */
+  .skill-card:hover {
+    transform: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Responsividad */
+@media (max-width: 1200px) {
+  .skills-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

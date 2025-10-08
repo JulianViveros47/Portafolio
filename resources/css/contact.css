@@ -1,0 +1,172 @@
+.contact-section {
+  position: relative;
+  min-height: 75vh;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+/* Fondo con cartas */
+.letters-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.letter {
+  position: absolute;
+  bottom: -50px;
+  font-size: 2rem;
+  opacity: 0.7;
+  animation: floatUp 8s linear infinite;
+}
+
+/* Variar posiciones y delays */
+.letter:nth-child(1) { left: 5%; animation-delay: 0s; }
+.letter:nth-child(2) { left: 15%; animation-delay: 2s; }
+.letter:nth-child(3) { left: 25%; animation-delay: 4s; }
+.letter:nth-child(4) { left: 35%; animation-delay: 1s; }
+.letter:nth-child(5) { left: 45%; animation-delay: 3s; }
+.letter:nth-child(6) { left: 55%; animation-delay: 5s; }
+.letter:nth-child(7) { left: 65%; animation-delay: 2.5s; }
+.letter:nth-child(8) { left: 75%; animation-delay: 6s; }
+.letter:nth-child(9) { left: 85%; animation-delay: 1.5s; }
+.letter:nth-child(10) { left: 95%; animation-delay: 4.5s; }
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-70vh) scale(1.2);
+  }
+  100% {
+    transform: translateY(-100vh) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Tarjeta */
+.contact-card {
+  position: relative;
+  z-index: 2;
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  max-width: 500px;
+  width: 100%;
+}
+
+.contact-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.contact-btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 50%;
+  margin-left: 120px;
+}
+
+.contact-btn:hover {
+  background: #1e40af;
+}
+
+/* Floating icon (decorativo) */
+.floating-icon {
+  position: fixed;
+  bottom: -60px;
+  font-size: 2rem;
+  color: #007bff;
+  opacity: 0.7;
+  animation: floatUp 8s linear infinite;
+  z-index: 0;
+}
+
+/* Mensajes de estado inline */
+.msg-success {
+  color: #22c55e;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.msg-error {
+  color: #ef4444;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Toast de éxito */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1rem 1.5rem;
+  background-color: #4ade80; /* verde éxito */
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  transition: opacity 0.4s, transform 0.4s;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast .icon {
+  font-size: 1.3rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .contact-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+}

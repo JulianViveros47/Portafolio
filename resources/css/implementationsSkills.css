@@ -1,0 +1,187 @@
+.implementations-section {
+  padding: 3rem 2rem;
+  margin-bottom: 100px;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;   /* 👈 centra el título */
+}
+
+.implementations-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #0ea5e9;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 60px;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  position: relative;
+  display: inline-block; /* 👈 se centra gracias al text-align del padre */
+  
+}
+
+
+.implementations-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, #0ea5e9, #3b82f6, #0ea5e9);
+  border-radius: 2px;
+  animation: glow 2s infinite linear;
+  
+}
+
+/* Menú */
+.implementations-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 4.5rem;
+}
+
+.menu-btn {
+  background: white;
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+.menu-btn.active {
+  background: #3b82f6;
+  color: white;
+  font-weight: bold;
+}
+
+/* Lista de implementaciones */
+.implementations-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.implementation-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.implementation-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.implementation-card img {
+  width: 40px;
+  height: 40px;
+}
+
+.implementation-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.learn-more {
+  background: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.learn-more:hover {
+  background: #3b82f6;
+}
+
+.implementations-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.implementations-title {
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  font-weight: bold;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  gap: 1rem;
+  perspective: 1000px;
+  width: 80%;
+  justify-content: center;
+}
+
+.carousel-card {
+  transition: transform 0.6s ease, z-index 0.3s;
+}
+
+.submenu-card {
+  width: 200px;
+  height: 220px;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.submenu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.submenu-logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.arrow-btn {
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  color: #333;
+  transition: transform 0.2s;
+}
+
+.arrow-btn:hover {
+  transform: scale(1.2);
+  color: #007bff;
+}
+

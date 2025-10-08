@@ -1,0 +1,41 @@
+.my-skills-section {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.skills-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #0ea5e9; /* azul moderno */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  position: relative;
+  display: inline-block;
+}
+
+/* Línea brillante debajo */
+.skills-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, #0ea5e9, #3b82f6, #0ea5e9);
+  border-radius: 2px;
+  animation: glow 2s infinite linear;
+}
+
+
+
+
+/* Animación tipo “circuito eléctrico” */
+@keyframes glow {
+  0% { box-shadow: 0 0 5px #0ea5e9; }
+  50% { box-shadow: 0 0 15px #3b82f6; }
+  100% { box-shadow: 0 0 5px #0ea5e9; }
+}
+

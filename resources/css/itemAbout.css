@@ -1,0 +1,75 @@
+.item-about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+
+}
+
+@media(min-width: 768px){
+  .item-about-container {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+}
+
+/* Columna izquierda: Foto + Habilidades blandas */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 0 0 250px;
+  align-items: center;
+}
+
+/* Foto */
+.about-photo img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #5a4ec3;
+}
+
+/* Columna derecha: Sobre mí + Estudios + Experiencia */
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Secciones */
+.section-container {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.section-header {
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.section-content {
+  padding: 18px 20px;
+  background-color: #fff;
+}
+
+.section-content p {
+  margin: 4px 0;
+}
+
+/* Habilidades blandas alta */
+.soft-skills {
+  height: calc(30px + 45px + 203px); /* aprox altura combinada de estudios + experiencia */
+}
+
+

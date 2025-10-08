@@ -1,0 +1,264 @@
+/* Fuente global para el navbar */
+.navbar {
+  width: 100%;
+  background-color: #ffffff;
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  font-family: 'Inter', 'Poppins', sans-serif; /* mejor tipografía */
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Logo */
+.navbar-logo {
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Links */
+.navbar-links {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar-links li {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+/* Separador "/" más grande */
+.navbar-links li + li::before {
+  content: "/"; /* el separador */
+  color: #aaaaaa; /* gris */
+  font-size: 22px; /* más grande que el texto */
+  margin: 0 12px; /* ajusta el espacio alrededor */
+}
+
+.navbar select {
+  margin-left: auto;
+  width: 120px; /* Puedes ajustar este valor según lo que necesites */
+  min-width: unset;
+  max-width: 150px;
+  flex: unset;
+}
+
+/* Links con animación */
+.navbar-links li a {
+  color: #333333;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+/* Subrayado animado al hover */
+.navbar-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px; /* ajusta la distancia del subrayado */
+  background-color: #0EA5E9; /* azul moderno */
+  transition: width 0.3s ease;
+}
+
+.navbar-links li a:hover::after {
+  width: 100%;
+}
+
+/* Cambio de color al pasar el cursor */
+.navbar-links li a:hover {
+  color: #0EA5E9;
+}
+
+/* Selector de idioma */
+.navbar-lang,
+.navbar-lang2  {
+  margin-left: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Contenedor de banderas */
+.navbar-lang-container {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+/* Estilo de cada bandera */
+.navbar-lang-container .flag {
+  font-size: 22px;
+  transition: transform 0.2s ease;
+}
+
+.navbar-lang-container .flag:hover {
+  transform: scale(1.2);
+}
+
+
+/* Animación al presionar */
+.navbar-links li a:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
+}
+
+
+/* Botón hamburguesa */
+.navbar-hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.navbar-hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+.navbar-lang2{
+  display: none;
+}
+
+/* Clases de visibilidad */
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: flex; /* links normales en desktop */
+}
+
+
+
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+
+  .mobile-only {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+
+  .desktop-only {
+    display: none; /* desaparece en móvil */
+  }
+
+  #about {
+    display: none;
+  }
+
+  .navbar-lang2 {
+    display: flex !important;
+    margin: 0;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+
+  .navbar {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  /* Contenedor de la fila superior: Inicio + idioma */
+.navbar-top-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding-right: 20px; /* opcional, espacio a la derecha */
+}
+
+/* Ajusta los links dentro de la fila superior */
+.navbar-top-row li a {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+
+
+  .navbar-logo {
+    order: 1;
+    text-align: right;
+    width: 500px;
+    margin-left: 2px;
+  }
+
+  .navbar-links {
+    order: 1;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    flex-direction: column;
+    gap: 0;
+    display: none;
+    border-bottom: 1px solid #e0e0e0;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links li + li::before {
+    content: ""; /* eliminar separador en móvil */
+    margin: 0;
+  }
+
+  .navbar-hamburger {
+    display: flex;
+    order: 2;
+
+  }
+
+    .navbar-lang-container,
+  .navbar-lang {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
